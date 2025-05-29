@@ -1,30 +1,60 @@
-.landing {
-  background-image: url('/src/assets/landing-background.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Force full height reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
+.landing {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../assets/landing-background.png'); /* updated path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* makes sure the overlay doesn't escape the bounds */
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 100, 0, 0.5); /* semi-transparent dark green */
+  z-index: 0;
+}
+
+
+
 .overlay {
+  position: relative;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 3rem;
+  border-radius: 12px;
   text-align: center;
   color: #fff;
   max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 
 .company-name {
   font-size: 3rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .company-tagline {
   font-size: 1.25rem;
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .get-started-btn {
@@ -35,6 +65,7 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .get-started-btn:hover {
