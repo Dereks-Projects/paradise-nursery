@@ -55,9 +55,20 @@ const cartSlice = createSlice({
         state.totalCost -= item.price * item.quantity;
         state.items = state.items.filter(i => i.id !== id);
       }
+    },
+
+    // ✅ This is the new export you needed
+    removeItem(state, action) {
+      const id = action.payload;
+      const item = state.items.find(item => item.id === id);
+      if (item) {
+        state.totalQuantity -= item.quantity;
+        state.totalCost -= item.price * item.quantity;
+        state.items = state.items.filter(i => i.id !== id);
+      }
     }
   }
 });
 
-export const { addItem, incrementItem, decrementItem, deleteItem } = cartSlice.actions;
+export const { addItem, incrementItem, decrementItem, deleteItem, removeItem } = cartSlice.actions;
 export default cartSlice.reducer;
