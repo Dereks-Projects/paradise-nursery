@@ -1,0 +1,42 @@
+.landing {
+  background-image: url('/src/assets/landing-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+}
+
+.company-name {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.company-tagline {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.get-started-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #81c784;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.get-started-btn:hover {
+  background-color: #66bb6a;
+}
