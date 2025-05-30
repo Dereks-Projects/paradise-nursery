@@ -8,7 +8,7 @@ const LandingPage = () => {
       <div className="overlay">
         <h1 className="company-name">Paradise Nursery</h1>
         <p className="company-tagline">
-          We bring nature indoors. Explore our hand-picked collection of houseplants to create your own paradise.
+          We bring nature indoors! Explore our hand-picked collection of houseplants to create your own paradise. Let us help you create the environment you thrive in.
         </p>
         <Link to="/products">
           <button className="get-started-btn">Get Started</button>
